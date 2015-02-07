@@ -21,8 +21,13 @@ var useminAutoprefixer = {
 };
 
 module.exports = function (grunt) {
-    require('load-grunt-tasks')(grunt);
     require('time-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+      ngconstant: 'grunt-ng-constant',
+      useminPrepare: 'grunt-usemin',
+      ngtemplates: 'grunt-angular-templates',
+      configureProxies: 'grunt-connect-proxy'
+    });
 
     grunt.initConfig({
         app : {
